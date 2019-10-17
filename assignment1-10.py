@@ -26,7 +26,7 @@ class Assignments:
                 print(j)
             else:
                 print(j,end=", ")
-#-----------------------課題３------------------------------------
+#-----------------------課題４------------------------------------
     def as4(self):
         while True:
             num = input("整数を入力してください(終了する場合はe)\n")
@@ -42,6 +42,23 @@ class Assignments:
                     print("偶数です")
                 else:
                     print("奇数です")
+#-----------------------課題５------------------------------------
+    def as5(self):
+        while True:
+            num = input("総和を出したい最大の整数を入力してください(終了する場合はe)\n")
+            find = re.search(r"[^0-9]",num)
+            if num == "e":
+                break
+            elif find:
+                print("正しい値を入力してください")
+            else:
+                ans = 0
+                if int(num) < 0:
+                    for i in range(0,int(num)-1,-1):
+                        ans += 1
+                else:
+                    ans = int(num)*(int(num)+1)/2
+                print(ans)
 
 
 assignments = Assignments()
