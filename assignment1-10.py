@@ -46,20 +46,20 @@ class Assignments:
     def as5(self):
         while True:
             num = input("総和を出したい最大の整数を入力してください(終了する場合はe)\n")
-            find = re.search(r"[^0-9]",num)
+            find = re.search(r"[^-0-9]",num)
             if num == "e":
                 break
             elif find:
                 print("正しい値を入力してください")
             else:
                 ans = 0
-                if int(num) < 0:
-                    for i in range(0,int(num)-1,-1):
-                        ans += 1
+                if int(num) <= 0:
+                    for i in range(1,int(num)-1,-1):
+                        ans += i
                 else:
                     ans = int(num)*(int(num)+1)/2
-                print(ans)
+                print(int(ans))
 
 
 assignments = Assignments()
-assignments.as4()
+assignments.as5()
